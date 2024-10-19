@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/31a9198573.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="icon" href="Media/logo.png">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <img id="logo" src="../Media/logo.png" alt="" srcset=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Product.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactus.html"> Contact Us </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Sorting </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="clothes.html">Laptobs</a></li>
+                            <li><a class="dropdown-item" href="smartphone.html">Smart phones</a></li>
+                            <li><a class="dropdown-item" href="homedecoration.html">Home Decoration</a></li>
+                            <li><a class="dropdown-item" href="skincare.html">Skin Care</a></li>
+                            <li><a class="dropdown-item" href="groceries.html">Groceries</a></li>
+                            <li><a class="dropdown-item" href="fragrances.html">Fragances</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control input-text me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <div class="user">
+                    <div class="login">
+                        <a href="login.html"><i class="fa-solid fa-user-large"></i> Login</a>
+                    </div>
+                    <div class="fav">
+                        <a href="fav.html"><i class="fa-solid fa-heart"></i></a>
+                    </div>
+                    <div class="cart">
+                        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="signupcontainer">
+        <div class="signup">
+            <form id="signupForm" class="signupForm flex" action="" method="get">
+                <div class="titleSignUp flex">
+                    <h2> Sign up</h2>
+                </div>
+
+                <div class="form-Control flex">
+                    <span class="spanForm" for="userFullName">Full Name </span>
+                    <input id="userFullName" class="inputchange" type=" text" name="userFullName" placeholder="Enter your user name here" onkeydown="checkerOnChange(event)">
+                    <i class="fa-solid fa-image-portrait"></i>
+                    <i class="fa-solid nameerrorIcon fa-circle-exclamation"></i>
+                    <i class="fa-solid  namecorrectIcon fa-circle-check"></i>
+                    <span class="error" id="erroruserFullName"></span>
+
+                </div>
+
+                <!-- ///// -->
+                <div class="form-Control flex ">
+
+                    <span class="spanForm" for="userEmail"> Email Address</span>
+                    <input id="userEmail" class="inputchange" type=" text" name="email" placeholder="Email address">
+                    <i class="fa-solid fa-envelope"></i>
+                    <i class="fa-solid  emailcorrectIcon fa-circle-check"></i>
+                    <i class="fa-solid emailerrorIcon fa-circle-exclamation"></i>
+
+                </div>
+
+                <!-- /////// -->
+                <div class="form-Control flex">
+
+                    <span class="spanForm" for="userPassword"> Password</span>
+                    <span class="error" id="erroruserpassword"></span>
+
+                    <input id="userPassword" class="inputchange" type=" password" name="password" placeholder="Password">
+                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid  passcorrectIcon fa-circle-check"></i>
+
+                    <i class="fa-solid passerrorIcon fa-circle-exclamation"></i>
+                    <span class="error" id="erroruseremail"></span>
+
+                </div>
+
+                <!-- /////// -->
+                <div class="form-Control ">
+
+                    <span class="spanForm" for="userConPassword"> Confirm Password</span>
+                    <input id="userConPassword" class="inputchange" type=" password" name="conpassword" placeholder="Confirm Password">
+                    <i class="fa-solid fa-unlock-keyhole"></i>
+                    <i class="fa-solid  confcorrectIcon fa-circle-check"></i>
+                    <i class="fa-solid conferrorIcon fa-circle-exclamation"></i>
+                    <span class="error" id="erroruserconfPass"></span>
+                </div>
+
+                <button id="submitSignup" class="btn" type="submit"> Sign Up</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <footer class="text-center ">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+            </section>
+            <!-- Section: Social media -->
+
+
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    M&G is a digitalization of shopping experience for both shops and shoppers. M&G is a multi-vendor e-commerce platform that allows shop owners to make their virtual shop easily within hours using a M&G platform to change their classic way of selling
+                </p>
+            </section>
+            <!-- Section: Text -->
+
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Category </h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="smartphone.html" class="text-white">Smart Phones</a>
+                            </li>
+                            <li>
+                                <a href="homedecoration.html" class="text-white">Home Decoration</a>
+                            </li>
+                            <li>
+                                <a href="groceries.html" class="text-white">Groceries</a>
+                            </li>
+                            <li>
+                                <a href="skincare.html" class="text-white">Skin Care</a>
+                            </li>
+                            <li>
+                                <a href="fragrances.html" class="text-white">Fragrances</a>
+                            </li>
+                            <li>
+                                <a href="labtops.html" class="text-white">Laptobs</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Contact Us</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">linkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/"> - men3em,,ghaly - Project - Group 0</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script src="/js/signup.js"></script>
+</body>
+
+</html>
