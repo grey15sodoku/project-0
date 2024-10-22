@@ -1,37 +1,49 @@
-const tablebody = document.getElementById("tablebody")
-const totalprice = document.getElementById("totalprice")
+const tablebody = document.getElementById("tablebody");
+const totalprice = document.getElementById("totalprice");
+const checkoutBtn = document.getElementById("checkoutBtn");
 
+let cartContainer = JSON.parse(localStorage.getItem("Cart")) || [];
 
+// Function to render the cart items in the table
+function renderCart() {
+    tablebody.innerHTML = ''; // Clear the current table body
+    let sum = 0; // Initialize sum for total price
 
-let cartContainer = []
-cartContainer = JSON.parse(localStorage.getItem("Cart"))
+    // Loop through cartContainer and populate the table
+    cartContainer.forEach((pro, index) => {
+        const item__Name = pro.itemName;
+        const item__price = parseInt(pro.itemprice);
+        sum += item__price; // Add price to sum
 
-// cartContainer.forEach((pro) => {
-for (let i = 0; i < cartContainer.length; i++) {
-    var item__Name = cartContainer[i].itemName
-    var item__price = cartContainer[i].itemprice
-    console.log(item__Name)
-    tablebody.innerHTML += `
-<tr>
-  <th scope="row">1</th>
-  <td>${item__Name}</td>
-  <td class="item-price">${item__price}</td>
-  <td>1</td>
-</tr>
+        tablebody.innerHTML += `
+            <tr>
+                <th scope="row">${index + 1}</th>
+                <td>${item__Name}</td>
+                <td class="item-price">${item__price}</td>
+                <td>1</td>
+                <td><button class="btn btn-danger remove-item" data-index="${index}">Remove</button></td>
+            </tr>
+        `;
+    });
 
-`
+    totalprice.innerHTML = sum; // Update total price
 }
 
+// Event listener for checkout button
+checkoutBtn.addEventListener('click', () => {
+    // Reload the page on checkout
+    window.location.reload();
+});
 
-var newCartContainer = []
-var sum
-for (let i = 0; i < cartContainer.length; i++) {
-    newCartContainer.push(parseInt(cartContainer[i].itemprice))
-}
-console.log(newCartContainer)
+// Event delegation for removing items
+tablebody.addEventListener('click', (event) => {
+    if (event.target.classList.contains('remove-item')) {
+        const index = event.target.getAttribute('data-index'); // Get index of item to remove
+        cartContainer.splice(index, 1); // Remove item from cart
+        localStorage.setItem("Cart", JSON.stringify(cartContainer)); // Update local storage
+        renderCart(); // Re-render the cart
+    }
+});
 
-var sum = 0;
-for (let i = 0; i < newCartContainer.length; i++) {
-    sum += newCartContainer[i];
-}
-totalprice.innerHTML = sum
+// Initial rendering of the cart
+renderCart();

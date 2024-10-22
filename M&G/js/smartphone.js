@@ -12,8 +12,8 @@ fetch('https://dummyjson.com/auth/login', {
         },
         body: JSON.stringify({
 
-            username: 'kminchelle',
-            password: '0lelplR',
+            username: 'omar',
+            password: '15Toto',
             // expiresInMins: 60, // optional
         })
     })
