@@ -31,7 +31,10 @@ function renderCart() {
 
 // Event listener for checkout button
 checkoutBtn.addEventListener('click', () => {
-    // Reload the page on checkout
+    // Clear the cart data from local storage
+    localStorage.removeItem("Cart");
+
+    // Reload the page to refresh and clear the cart view
     window.location.reload();
 });
 
